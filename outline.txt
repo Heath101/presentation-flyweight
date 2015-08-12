@@ -1,6 +1,25 @@
 outline
 
 The Flyweight Pattern
+GoF structural pattern
+
+Definition
+Design Pattern
+general reusable solution to a commonly occurring problem within a given context -wikipedia
+
+I like design patterns because it helps give developers a starting point from which to talk about architecture.  How cool is that with a couple words, the whole direction of a project can change.
+
+
 
 What is it?
 - a way to minimize memory by sharing as much data with similar objects.
+
+Examples
+- Word Processor
+- Create a forest
+- library books
+- lights on a christmas tree
+
+
+Side
+- really needs to be immutable

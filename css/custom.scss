@@ -1,5 +1,24 @@
 $accent: #13DAEC;
+$accent-dark-blue: #295EEF;
+$accent-light-orange: #FFB311;
+$accent-orange: #FF8111;
 
-.accent {
+.accent-light-orange {
+  color: $accent-light-orange;
+}
+
+.accent-orange {
+  color: $accent-orange;
+}
+
+.accent-blue {
   color: $accent;
+}
+
+.accent-dark-blue {
+  color: $accent-dark-blue;
+}
+
+.bold {
+  font-weight: 800;
 }

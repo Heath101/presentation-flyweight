@@ -1,2 +1,14 @@
-.accent {
+.accent-light-orange {
+  color: #FFB311; }
+
+.accent-orange {
+  color: #FF8111; }
+
+.accent-blue {
   color: #13DAEC; }
+
+.accent-dark-blue {
+  color: #295EEF; }
+
+.bold {
+  font-weight: 800; }
