@@ -1,0 +1,6 @@
+outline
+
+The Flyweight Pattern
+
+What is it?
+- a way to minimize memory by sharing as much data with similar objects.
