@@ -7,12 +7,20 @@ Definition
 Design Pattern
 general reusable solution to a commonly occurring problem within a given context -wikipedia
 
-I like design patterns because it helps give developers a starting point from which to talk about architecture.  How cool is that with a couple words, the whole direction of a project can change.
+I like design patterns because it helps give developers a starting point from which to talk about architecture.  How cool is that with just a few words, we can convey complex ideas which bring their own implicit boundaries, and assumptions.  Design patterns even act as an easy way to orient how we look at a problem the same way.
 
 
+Flyweight
+I have come across this pattern several times.  Each time I've come across the pattern I've not remembered really what it was about, and thought "This time I'm going to learn this pattern, and apply it".  That never happened, so I'm doing a presentation about it.  Maybe that will help it stick.
+
+
+The pattern really is not that complicated. it is . . .
 
 What is it?
+- a structural design pattern
 - a way to minimize memory by sharing as much data with similar objects.
+
+I think this is why I tended to gloss over this pattern.  When I hear 'memory sharing' I think systems programming, and while it is important that we think about memory consumption, I've never really done anything that required that level of performance.
 
 Examples
 - Word Processor
