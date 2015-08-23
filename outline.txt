@@ -11,7 +11,7 @@ I like design patterns because it helps give developers a starting point from wh
 
 
 Flyweight
-I have come across this pattern several times.  Each time I've come across the pattern I've not remembered really what it was about, and thought "This time I'm going to learn this pattern, and apply it".  That never happened, so I'm doing a presentation about it.  Maybe that will help it stick.
+I have come across this pattern several times.  I found that each time I came to a chapter in a book or description of flyweight, something would inevitably make me think that this pattern isn't very useful to me as a web developer.  So I would half heartedly read through the chapter hoping to quickly get to something more exciting. "This time I'm going to learn this pattern, and apply it" I would say to myself.  That never happened, so I'm doing a presentation about it.  Maybe that will help it stick.
 
 
 The pattern really is not that complicated. it is . . .
@@ -19,6 +19,8 @@ The pattern really is not that complicated. it is . . .
 What is it?
 - a structural design pattern
 - a way to minimize memory by sharing as much data with similar objects.
+
+Most often the examples of this pattern revolve around gaming or text editors.  The reason is because this pattern tries to solve problems that arise when a program has lots of objects which consume a lot of memory
 
 I think this is why I tended to gloss over this pattern.  When I hear 'memory sharing' I think systems programming, and while it is important that we think about memory consumption, I've never really done anything that required that level of performance.
 
