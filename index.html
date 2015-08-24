@@ -55,6 +55,19 @@
 
         </section>
 
+        <section>
+          <h2>What is the flyweight pattern?</h2>
+          <ul>
+            <li class='fragment'><p>a <span class='accent-light-orange'>structural</span> design pattern</p></li>
+            <li class='fragment'><p>a way to <span class='accent-light-orange'>minimize memory</span> by <span class='accent-light-orange'>sharing</span> as much data with similar objects.</p></li>
+          </ul>
+        </section>
+
+        <section>
+          <img src="images/flyweight-trees.png" alt="">
+        </section>
+
+
         <section data-transition="slide">
           <section data-transition="slide">
           <h2>Classification of Data</h2>
@@ -69,235 +82,132 @@
             <h1>Extrinsic</h1>
           </section>
         </section>
-
-        <!-- Example of nested vertical slides -->
-
-
         <section>
-          <section id="fragments">
-            <h2>Fragments</h2>
-            <p>Hit the next arrow...</p>
-            <p class="fragment">... to step through ...</p>
-            <p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-            <aside class="notes">
-              This slide has fragments which are also stepped through in the notes window.
-            </aside>
-          </section>
-          <section>
-            <h2>Fragment Styles</h2>
-            <p>There's different types of fragments, like:</p>
-            <p class="fragment grow">grow</p>
-            <p class="fragment shrink">shrink</p>
-            <p class="fragment fade-out">fade-out</p>
-            <p class="fragment current-visible">current-visible</p>
-            <p class="fragment highlight-red">highlight-red</p>
-            <p class="fragment highlight-blue">highlight-blue</p>
-          </section>
+          <img src="images/flyweight-tree-model.png" alt="">
         </section>
 
         <section>
-          <section data-background="#dddddd">
-            <h2>Slide Backgrounds</h2>
-            <p>
-              Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-            </p>
-            <a href="#" class="navigate-down">
-              <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-            </a>
-          </section>
-          <section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-            <h2>Image Backgrounds</h2>
-            <pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-          </section>
-          <section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-            <h2>Tiled Backgrounds</h2>
-            <pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-          </section>
-          <section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-            <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-              <h2>Video Backgrounds</h2>
-              <pre><code style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-            </div>
-          </section>
-          <section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-            <h2>... and GIFs!</h2>
-          </section>
-        </section>
-
-        <section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-          <h2>Background Transitions</h2>
-          <p>
-            Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-          </p>
-          <pre><code>Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-        </section>
-
-        <section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-          <h2>Background Transitions</h2>
-          <p>
-            You can override background transitions per-slide.
-          </p>
-          <pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
+          <h1>Example</h1>
+          <h2>Let's decorate a Christmas tree</h2>
         </section>
 
         <section>
-          <h2>Pretty Code</h2>
-          <pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
+          <h2>Lamp</h2>
+          <p>the flyweight object</p>
+          <pre><code class='ruby hljs' data-trim contenteditable>
+# Flyweight Object
+class Lamp
+  attr_reader :color
 
-    var nodes = document.querySelectorAll( selector );
+  def initialize(color)
+    @color = color
+  end
+end
 
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
           </code></pre>
-          <p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+
         </section>
 
         <section>
-          <h2>Marvelous List</h2>
-          <ul>
-            <li>No order here</li>
-            <li>Or here</li>
-            <li>Or here</li>
-            <li>Or here</li>
-          </ul>
-        </section>
+          <h2>Tree Branch</h2>
+          <p></p>
+          <pre><code class='ruby hljs' data-trim contenteditable>
+class TreeBranch
+  def initialize(branch_number)
+    @branch_number = branch_number
+  end
 
-        <section>
-          <h2>Fantastic Ordered List</h2>
-          <ol>
-            <li>One is smaller than...</li>
-            <li>Two is smaller than...</li>
-            <li>Three!</li>
-          </ol>
-        </section>
+  def hang(lamp)
+    puts "Hang #{lamp.color} lamp on branch #{@branch_number}"
+  end
+end
 
-        <section>
-          <h2>Tabular Tables</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th>Value</th>
-                <th>Quantity</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Apples</td>
-                <td>$1</td>
-                <td>7</td>
-              <tr>
-              <tr>
-                <td>Lemonade</td>
-                <td>$2</td>
-                <td>18</td>
-              <tr>
-              <tr>
-                <td>Bread</td>
-                <td>$3</td>
-                <td>2</td>
-              <tr>
-            </tbody>
-          </table>
-        </section>
-
-        <section>
-          <h2>Clever Quotes</h2>
-          <p>
-            These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-            &ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-          </p>
-          <blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-            &ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-            reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-          </blockquote>
-        </section>
-
-        <section>
-          <h2>Intergalactic Interconnections</h2>
-          <p>
-            You can link between slides internally,
-            <a href="#/2/3">like this</a>.
-          </p>
-        </section>
-
-        <section>
-          <h2>Speaker View</h2>
-          <p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-          <p>Press the <em>S</em> key to try it out.</p>
-
-          <aside class="notes">
-            Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-          </aside>
-        </section>
-
-        <section>
-          <h2>Export to PDF</h2>
-          <p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-          <iframe src="//www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-        </section>
-
-        <section>
-          <h2>Global State</h2>
-          <p>
-            Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-            will be added as a class to the document element when the slide is open. This lets you
-            apply broader style changes, like switching the page background.
-          </p>
-        </section>
-
-        <section data-state="customevent">
-          <h2>State Events</h2>
-          <p>
-            Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-          </p>
-          <pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-  console.log( '"customevent" has fired' );
-} );
           </code></pre>
+
+        </section>
+        <section>
+          <h2>Lamp Factory</h2>
+          <pre><code class='ruby hljs' data-trim contenteditable>
+# Flyweight Factory
+class LampFactory
+  def initialize
+    @lamps = {}
+  end
+
+  def find_lamp(color)
+    if @lamps.has_key?(color)
+      # if the lamp already exists, reference it instead of
+      # creating a new one
+      lamp = @lamps[color]
+    else
+      lamp = Lamp.new(color)
+      @lamps[color] = lamp
+    end
+    lamp
+  end
+
+  def total_number_of_lamps_made
+    @lamps.size
+  end
+end      </code></pre>
         </section>
 
         <section>
-          <h2>Take a Moment</h2>
-          <p>
-            Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-          </p>
+
+          <h2>Christmas Tree</h2>
+          <pre><code class='ruby hljs' data-trim contenteditable>
+class ChristmasTree
+  def initialize
+    @lamp_factory = LampFactory.new
+    @lamps_hung = 0
+
+    dress_up_the_tree
+  end
+
+  def hang_lamp(color, branch_number)
+    TreeBranch.new(branch_number).hang(@lamp_factory.find_lamp(color))
+    @lamps_hung += 1
+  end
+
+  def dress_up_the_tree
+    hang_lamp('red', 1)
+    hang_lamp('blue', 1)
+    hang_lamp('yellow', 1)
+    hang_lamp('red', 2)
+    hang_lamp('blue', 2)
+    hang_lamp('yellow', 2)
+    hang_lamp('red', 3)
+    hang_lamp('blue', 3)
+    hang_lamp('yellow', 3)
+    hang_lamp('red', 4)
+    hang_lamp('blue', 4)
+    hang_lamp('yellow', 4)
+    hang_lamp('red', 5)
+    hang_lamp('blue', 5)
+    hang_lamp('yellow', 5)
+    hang_lamp('red', 6)
+    hang_lamp('blue', 6)
+    hang_lamp('yellow', 6)
+    hang_lamp('red', 7)
+    hang_lamp('blue', 7)
+    hang_lamp('yellow', 7)
+    puts "Made #{@lamp_factory.total_number_of_lamps_made} total lamps"
+  end
+end     </code></pre>
         </section>
 
         <section>
-          <h2>Much more</h2>
-          <ul>
-            <li>Right-to-left support</li>
-            <li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-            <li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-            <li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-            <li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-          </ul>
+
+
         </section>
 
-        <section style="text-align: left;">
-          <h1>THE END</h1>
-          <p>
-            - <a href="http://slides.com">Try the online editor</a> <br>
-            - <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-          </p>
-        </section>
+
 
       </div>
 
     </div>
 
+    <script type="text/javascript" src='https://code.jquery.com/jquery-2.1.4.js'></script>
     <script src="lib/js/head.min.js"></script>
     <script src="js/reveal.js"></script>
 

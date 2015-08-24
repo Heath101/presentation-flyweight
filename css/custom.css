@@ -12,3 +12,12 @@
 
 .bold {
   font-weight: 800; }
+
+.no-format {
+  border: 0 !important;
+  background: none !important;
+  box-shadow: none !important; }
+
+.tree {
+  float: left;
+  max-height: 500px !important; }
